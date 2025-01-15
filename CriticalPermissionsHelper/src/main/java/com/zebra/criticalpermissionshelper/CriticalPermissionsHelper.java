@@ -196,7 +196,7 @@ public class CriticalPermissionsHelper {
                     "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
                             "<characteristic type=\"Profile\">" +
                             "<parm name=\"ProfileName\" value=\"" + profileName + "\"/>" +
-                            "<characteristic type=\"AccessMgr\" version=\"11.3\">" +
+                            "<characteristic type=\"AccessMgr\" version=\"" + mxVersion + "\">" +
                             "<parm name=\"PermissionAccessAction\" value=\"" + permissionAccessAction.toString() + "\" />" +
                             "<parm name=\"PermissionAccessPackageName\" value=\"" + context.getPackageName() + "\" />" +
                             "<parm name=\"PermissionAccessPermissionName\" value=\"" + permissionType.toString() + "\" />\n" +
