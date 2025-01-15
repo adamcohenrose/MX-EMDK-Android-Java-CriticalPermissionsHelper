@@ -112,9 +112,9 @@ public class CriticalPermissionsHelper {
     //ACCESS_BACKGROUND_LOCATION
     //ACTIVITY_RECOGNITION
 
-    public static void grantPermission(Context context, EPermissionType permissionType, IResultCallbacks callbackInterface)
+    public static void grantPermission(Context context, EPermissionType permissionType, IResultCallbacks callbackInterface, String mxVersion)
     {
-        executeAccessMgrPermissionCommand(context, EPermissionAccessAction.GRANT_PERMISSION, permissionType, callbackInterface);
+        executeAccessMgrPermissionCommand(context, EPermissionAccessAction.GRANT_PERMISSION, permissionType, callbackInterface, mxVersion);
     }
 
     public static void denyPermission(Context context, EPermissionType permissionType, IResultCallbacks callbackInterface)
@@ -153,6 +153,10 @@ public class CriticalPermissionsHelper {
     }
 
     private static void executeAccessMgrPermissionCommand(Context context, EPermissionAccessAction permissionAccessAction, EPermissionType permissionType, IResultCallbacks callbackInterface) {
+        executeAccessMgrPermissionCommand(context, permissionAccessAction, permissionType, callbackInterface, "11.5");
+    }
+
+    private static void executeAccessMgrPermissionCommand(Context context, EPermissionAccessAction permissionAccessAction, EPermissionType permissionType, IResultCallbacks callbackInterface, String mxVersion) {
         String profileName = "AccessMgr-1";
         String profileData = "";
         try {
